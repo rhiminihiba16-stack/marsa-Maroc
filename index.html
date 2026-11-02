@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SME Marsa Maroc – Port d’Agadir</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap">
+<style>
+:root{--bg:#eef3f5;--surf:#fff;--ink:#0e2a3a;--mute:#5b7280;--line:#d5e0e4;--sea:#1b6f8c;--sea2:#0e4a61;--amb:#d98f0b;--ok:#1f8a5b;--bad:#c0392b;--on:#fff;--side:#0e2a3a;--sideink:#cfe0e7;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a1a23;--surf:#112733;--ink:#e6f0f3;--mute:#8fa8b3;--line:#22404f;--sea:#4fb3d3;--sea2:#8bd3ea;--amb:#f0b13a;--ok:#4cc38a;--bad:#ef6a5b;--on:#0a1a23;--side:#071218;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0a1a23;--surf:#112733;--ink:#e6f0f3;--mute:#8fa8b3;--line:#22404f;--sea:#4fb3d3;--sea2:#8bd3ea;--amb:#f0b13a;--ok:#4cc38a;--bad:#ef6a5b;--on:#0a1a23;--side:#071218;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 "Bricolage Grotesque",system-ui,sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--side);z-index:30}
+:focus-visible{outline:3px solid var(--amb);outline-offset:2px}
+.app{display:grid;grid-template-columns:230px 1fr;min-height:100vh}
+aside{background:var(--side);color:var(--sideink);padding:16px 10px;position:sticky;top:env(safe-area-inset-top,0px);height:calc(100vh - env(safe-area-inset-top,0px));overflow:auto}
+aside .brand{font-weight:800;font-size:17px;color:#fff;padding:4px 10px 14px}
+aside .brand small{display:block;font-weight:400;font-size:12px;color:var(--sideink)}
+aside h4{margin:14px 10px 6px;font-size:12px;font-weight:600;color:#8fb0be}
+aside button{display:block;width:100%;text-align:left;background:none;border:0;color:inherit;font:inherit;padding:8px 10px;border-radius:8px;cursor:pointer}
+aside button[aria-current=page]{background:var(--sea);color:#fff;font-weight:600}
+aside button:hover{background:rgba(255,255,255,.08)}
+main{min-width:0}
+.top{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:10px 20px;background:var(--surf);border-bottom:1px solid var(--line);position:sticky;top:env(safe-area-inset-top,0px);z-index:5}
+.top .t{margin-right:auto}
+.top h1{margin:0;font-size:20px}.top p{margin:0;color:var(--mute);font-size:13px}
+.pill{font-size:12px;font-weight:600;padding:3px 10px;border-radius:99px;background:color-mix(in srgb,var(--amb) 20%,var(--surf));border:1px solid var(--amb)}
+select,input[type=text],input[type=search]{font:inherit;padding:7px 9px;border-radius:8px;border:1px solid var(--line);background:var(--surf);color:var(--ink);max-width:100%}
+.btn{border:0;border-radius:8px;padding:8px 14px;font:600 14px inherit;font-family:inherit;background:var(--sea);color:var(--on);cursor:pointer}
+.btn.alt{background:transparent;color:var(--ink);border:1px solid var(--line)}.btn:disabled{opacity:.4;cursor:not-allowed}
+.page{padding:20px;max-width:1200px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:16px}
+.card{background:var(--surf);border:1px solid var(--line);border-radius:10px;padding:14px;margin-bottom:12px;min-width:0}
+.grid .card{margin:0}
+.k{font-size:30px;font-weight:800;letter-spacing:-.02em;line-height:1.1}.l{color:var(--mute);font-size:13px}
+h2{font-size:17px;margin:0 0 10px}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:520px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);font-size:14px}th{color:var(--mute);font-weight:600}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px}.ok{background:var(--ok)}.late{background:var(--amb)}.lost{background:var(--bad)}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.chart{width:100%;height:auto}
+.bar{height:9px;border-radius:5px;background:var(--line);position:relative;min-width:90px}.bar i{position:absolute;inset:0 auto 0 0;border-radius:5px;background:var(--sea)}
+.tag{font-size:12px;font-weight:600;padding:2px 8px;border-radius:99px;border:1px solid var(--line)}
+.mute{color:var(--mute)}.small{font-size:13px}
+ul.c{margin:0;padding-left:18px}ul.c li{margin:4px 0}
+.layer{border-left:3px solid var(--sea);padding:6px 12px;margin:0 0 8px;background:var(--surf);border-radius:0 8px 8px 0}
+@media(max-width:820px){.app{grid-template-columns:1fr}aside{position:static;height:auto;display:flex;flex-wrap:wrap;gap:4px;padding:8px}aside .brand,aside h4{display:none}aside button{width:auto;padding:6px 10px;font-size:14px}.page{padding:12px}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside id="side" aria-label="Navigation"></aside>
+<main>
+<div class="top">
+<div class="t"><h1 id="ttl"></h1><p id="sub"></p></div>
+<span class="pill">Mode démonstration : données simulées</span>
+<span class="small mute" id="clk"></span>
+<label class="small">Rôle <select id="role"><option>Administrateur</option><option>Opérateur</option><option>Lecteur</option></select></label>
+<button class="btn alt" id="th" aria-label="Changer de thème">Thème</button>
+</div>
+<div class="page" id="pg"></div>
+</main>
+</div>
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+function R(s){return function(){s=(s*9301+49297)%233280;return s/233280}}
+var PS=[["PTY","PT Y",12],["PTX","PT X",11],["PTZ","PT Z",10],["PT4","PT 4",9],["PT1","PT 1",12],["PT7","PT 7",6]];
+var N=48,PTS=[];
+PS.forEach(function(p,pi){for(var i=1;i<=p[2];i++){
+ var r=R(pi*100+i),base=i<3?180+r()*120:20+r()*60,age=(p[0]==="PT4"&&i===5)?95:(p[0]==="PTZ"&&i===7)?25:Math.floor(r()*6);
+ var s=[];for(var k=0;k<N;k++){var h=k/2,pf=.62+.38*Math.sin((h-6)/24*2*Math.PI)+(h>7&&h<18?.15:0);s.push(Math.round(base*pf*(.9+r()*.2)*10)/10)}
+ for(var j=0;j<Math.floor(age/30);j++)s[N-1-j]=null;
+ var hh=[],sq=0;for(var q=2;q<=40;q++){var w=q===5?3:q===7?2:q===11?1.2:q===13?.9:.8/Math.sqrt(q/5);var v=(q%2?1:.2)*w*(.7+r()*.6);hh.push(v);sq+=v*v}
+ PTS.push({id:p[0]+"-"+("0"+i).slice(-2),poste:p[0],n:i<3?"TGBT T"+i:"Départ sec. S"+(i-2),base:base,age:age,s:s,h:hh,thdi:Math.sqrt(sq),thdu:.7+r()*1.4,pf:.9+r()*.08,ser:.9+r()*.25})}});
+function cur(p){for(var k=N-1;k>=0;k--)if(p.s[k]!=null)return p.s[k];return null}
+function kwh(p){return p.s.reduce(function(a,v){return a+(v||0)*.5},0)}
+function st(a){return a<15?["ok","À jour"]:a<60?["late","En retard"]:["lost","Communication perdue"]}
+function ago(m){return m<60?"il y a "+m+" min":"il y a "+Math.floor(m/60)+" h "+("0"+(m%60)).slice(-2)}
+function f(x,d){return Number(x).toLocaleString("fr-FR",{maximumFractionDigits:d==null?0:d,minimumFractionDigits:d==null?0:d})}
+function pp(id){return PS.filter(function(p){return p[0]===id})[0]}
+function sum(a,fn){return a.reduce(function(s,x){return s+fn(x)},0)}
+function ofP(id){return PTS.filter(function(x){return x.poste===id})}
+
+var S={v:"dash",role:"Administrateur",po:"PTY",pt:"PTY-01",q:"P",audit:[],rep:"conso",users:[["admin","Administrateur"],["exploit1","Opérateur"],["audit1","Lecteur"]],chk:{}};
+function log(a){S.audit.unshift({t:new Date().toLocaleTimeString("fr-FR"),u:S.role,a:a})}
+var AL=[];
+PTS.forEach(function(p){if(p.age>=60)AL.push({t:"Perte de communication",e:p.id,v:"Dernière lecture "+ago(p.age),r:"Aucune lecture > 60 min (exemple)",pr:"Haute",st:"Nouvelle",h:["Détectée automatiquement"]});
+ else if(p.age>=15)AL.push({t:"Communication en retard",e:p.id,v:"Dernière lecture "+ago(p.age),r:"Retard > 15 min (exemple)",pr:"Moyenne",st:"Nouvelle",h:["Détectée automatiquement"]})});
+AL.push({t:"Dépassement de seuil",e:"PTX-01",v:"305 kW",r:"Seuil exemple 300 kW",pr:"Moyenne",st:"Prise en charge",h:["Détectée automatiquement","Prise en charge"]});
+AL.push({t:"Donnée invalide",e:"PT7-03",v:"Valeur négative isolée",r:"Contrôle de validité",pr:"Basse",st:"Clôturée",h:["Détectée automatiquement","Clôturée : compteur redémarré"]});
+
+function line(arr,unit){var W=720,H=240,m=48,v=arr.filter(function(x){return x!=null}),mx=(Math.max.apply(null,v)||1)*1.1,d="",pen=0;
+ arr.forEach(function(y,k){if(y==null){pen=0;return}var X=m+(W-m-8)*k/(arr.length-1),Y=H-24-(H-40)*y/mx;d+=(pen?"L":"M")+X.toFixed(1)+" "+Y.toFixed(1);pen=1});
+ var g=[0,.5,1].map(function(q){var y=H-24-(H-40)*q;return '<line x1="'+m+'" x2="'+(W-8)+'" y1="'+y+'" y2="'+y+'" stroke="var(--line)"/><text x="'+(m-6)+'" y="'+(y+4)+'" text-anchor="end" font-size="11" fill="var(--mute)">'+f(mx*q,mx<5?1:0)+'</text>'}).join("");
+ var x=[0,6,12,18,24].map(function(h){return '<text x="'+Math.min(m+(W-m-8)*h/24,W-14)+'" y="'+(H-6)+'" text-anchor="middle" font-size="11" fill="var(--mute)">'+h+' h</text>'}).join("");
+ return '<svg class="chart" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="Courbe '+unit+' sur 24 heures">'+g+'<path d="'+d+'" fill="none" stroke="var(--sea)" stroke-width="2.5"/>'+x+'<text x="'+m+'" y="12" font-size="11" fill="var(--mute)">'+unit+'</text></svg>'}
+function bars(a,lim){var W=720,H=200,m=34,mx=Math.max.apply(null,a)*1.15,bw=(W-m-8)/a.length;
+ return '<svg class="chart" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="Spectre harmonique, rangs 2 à 40">'+a.map(function(v,i){var h=(H-34)*v/mx;return '<rect x="'+(m+i*bw+1)+'" y="'+(H-22-h)+'" width="'+(bw-2)+'" height="'+h+'" fill="var(--sea)" rx="2"><title>Rang '+(i+2)+' : '+f(v,2)+' %</title></rect>'+((i+2)%5===0?'<text x="'+(m+i*bw+bw/2)+'" y="'+(H-6)+'" text-anchor="middle" font-size="10" fill="var(--mute)">'+(i+2)+'</text>':'')}).join("")+'<text x="2" y="12" font-size="11" fill="var(--mute)">% du fondamental</text></svg>'}
+function selPo(){return '<label class="small">Poste <select data-s="po">'+PS.map(function(p){return '<option value="'+p[0]+'"'+(p[0]===S.po?" selected":"")+'>'+p[1]+'</option>'}).join("")+'</select></label>'}
+function selPt(){var l=ofP(S.po);if(!l.some(function(x){return x.id===S.pt}))S.pt=l[0].id;return '<label class="small">Point <select data-s="pt">'+l.map(function(x){return '<option value="'+x.id+'"'+(x.id===S.pt?" selected":"")+'>'+x.id+' – '+x.n+'</option>'}).join("")+'</select></label>'}
+function ptOf(id){return PTS.filter(function(x){return x.id===id})[0]}
+function can(){return S.role!=="Lecteur"}
+
+var V={
+dash:["Tableau de bord","Vue d’ensemble du Port d’Agadir",function(){
+ var tot=sum(PTS,function(p){return cur(p)||0}),on=PTS.filter(function(p){return p.age<15}).length,op=AL.filter(function(a){return a.st!=="Clôturée"}).length;
+ var site=[];for(var k=0;k<N;k++)site.push(sum(PTS,function(p){return p.s[k]||0}));
+ return '<div class="grid"><div class="card"><div class="k">'+f(tot)+' kW</div><div class="l">Puissance active, dernières lectures</div></div><div class="card"><div class="k">'+f(sum(PTS,kwh))+' kWh</div><div class="l">Énergie sur 24 h</div></div><div class="card"><div class="k">'+on+' / '+PTS.length+'</div><div class="l">Compteurs à jour</div></div><div class="card"><div class="k">'+op+'</div><div class="l">Alertes ouvertes</div></div></div>'+
+ '<div class="card"><h2>Puissance du site, 24 h</h2>'+line(site,"kW")+'<p class="small mute">Les interruptions de courbe correspondent à des périodes sans lecture : elles ne sont ni interpolées ni comptées comme zéro.</p></div>'+
+ '<div class="card scroll"><h2>Postes</h2><table><thead><tr><th>Poste</th><th>Points</th><th>Puissance</th><th>Énergie 24 h</th><th>Communication</th></tr></thead><tbody>'+PS.map(function(p){var l=ofP(p[0]),bad=l.filter(function(x){return x.age>=15}).length;return '<tr><td><b>'+p[1]+'</b></td><td>'+l.length+'</td><td>'+f(sum(l,function(x){return cur(x)||0}))+' kW</td><td>'+f(sum(l,kwh))+' kWh</td><td><span class="dot '+(bad?"late":"ok")+'"></span>'+(bad?bad+" point(s) à vérifier":"Tous à jour")+'</td></tr>'}).join("")+'</tbody></table></div>'}],
+syn:["Synoptique et analyses","Alimentation et répartition par poste",function(){
+ var mx=Math.max.apply(null,PS.map(function(p){return sum(ofP(p[0]),kwh)})),W=720,svg='<svg class="chart" viewBox="0 0 '+W+' 230" role="img" aria-label="Synoptique du site"><rect x="270" y="10" width="180" height="40" rx="8" fill="var(--sea2)"/><text x="360" y="35" text-anchor="middle" fill="#fff" font-size="14">Réseau du port</text>';
+ PS.forEach(function(p,i){var x=14+i*116,l=ofP(p[0]),bad=l.some(function(z){return z.age>=60}),c=bad?"var(--bad)":l.some(function(z){return z.age>=15})?"var(--amb)":"var(--ok)";
+  svg+='<line x1="360" y1="50" x2="'+(x+51)+'" y2="130" stroke="'+c+'" stroke-width="2"/><rect x="'+x+'" y="130" width="102" height="76" rx="8" fill="var(--surf)" stroke="'+c+'" stroke-width="2"/><text x="'+(x+51)+'" y="156" text-anchor="middle" font-size="14" font-weight="700" fill="var(--ink)">'+p[1]+'</text><text x="'+(x+51)+'" y="178" text-anchor="middle" font-size="13" fill="var(--ink)">'+f(sum(l,function(z){return cur(z)||0}))+' kW</text><text x="'+(x+51)+'" y="196" text-anchor="middle" font-size="11" fill="var(--mute)">'+l.length+' points</text>'});
+ svg+='</svg>';
+ return '<div class="card">'+svg+'</div><div class="card"><h2>Répartition de l’énergie, 24 h</h2>'+PS.map(function(p){var e=sum(ofP(p[0]),kwh);return '<div class="row" style="margin-bottom:8px"><span style="width:60px">'+p[1]+'</span><div class="bar" style="flex:1"><i style="width:'+e/mx*100+'%"></i></div><b style="width:90px;text-align:right">'+f(e)+' kWh</b></div>'}).join("")+'</div>'}],
+pos:["Postes et compteurs","Inventaire des points de comptage",function(){
+ return '<div class="row">'+selPo()+'</div><div class="card scroll"><table><thead><tr><th>Point</th><th>Désignation</th><th>Protocole</th><th>Dernière communication</th><th>Puissance</th><th>État</th></tr></thead><tbody>'+ofP(S.po).map(function(p){var s=st(p.age);return '<tr><td>'+p.id+'</td><td>'+p.n+'</td><td>Modbus TCP/IP</td><td>'+ago(p.age)+'</td><td>'+(cur(p)==null?"—":f(cur(p),1)+" kW")+'</td><td><span class="dot '+s[0]+'"></span>'+s[1]+'</td></tr>'}).join("")+'</tbody></table></div><p class="small mute">Adresses IP, modèles et registres seront renseignés après l’inventaire contradictoire des postes.</p>'}],
+mes:["Mesures et courbes","Grandeurs électriques par point de comptage",function(){
+ var p=ptOf(S.pt),Q={P:["Puissance active","kW",function(x){return x}],Q:["Puissance réactive","kvar",function(x){return x*Math.tan(Math.acos(p.pf))}],I:["Courant","A",function(x){return x*1000/(Math.sqrt(3)*400*p.pf)}],U:["Tension","V",function(x,k){return 400+Math.sin(k/5)*4}]},q=Q[S.q];
+ var a=p.s.map(function(x,k){return x==null?null:q[2](x,k)});
+ return '<div class="row">'+selPo()+selPt()+'<label class="small">Grandeur <select data-s="q">'+Object.keys(Q).map(function(k){return '<option value="'+k+'"'+(k===S.q?" selected":"")+'>'+Q[k][0]+'</option>'}).join("")+'</select></label></div><div class="card"><h2>'+q[0]+' – '+p.id+' ('+p.n+')</h2>'+line(a,q[1])+'<p class="small mute">Dernière lecture '+ago(p.age)+'. Pas de 30 min, 24 dernières heures.</p></div>'}],
+qual:["Qualité d’énergie","Harmoniques et creux de tension",function(){
+ var p=ptOf(S.pt),tu=sum(PTS,function(x){return x.thdu})/PTS.length,ti=sum(PTS,function(x){return x.thdi})/PTS.length;
+ return '<div class="grid"><div class="card"><div class="k">'+f(tu,2)+' %</div><div class="l">THD-U moyen, limite indicative 8 % (EN 50160)</div></div><div class="card"><div class="k">'+f(ti,2)+' %</div><div class="l">THD-I moyen, rang max analysé : 40</div></div><div class="card"><div class="k">0</div><div class="l">Creux de tension, 24 dernières heures</div></div></div>'+
+ '<div class="row">'+selPo()+selPt()+'</div><div class="card"><h2>Spectre harmonique en courant, rangs 2 à 40 – '+p.id+'</h2>'+bars(p.h)+'<p class="small mute">THD-I du point : '+f(p.thdi,2)+' % · THD-U : '+f(p.thdu,2)+' %</p></div>'+
+ '<div class="card scroll"><h2>THD par poste</h2><table><thead><tr><th>Poste</th><th>THD-U moy. %</th><th>THD-I moy. %</th><th>Statut</th></tr></thead><tbody>'+PS.map(function(q){var l=ofP(q[0]),u=sum(l,function(x){return x.thdu})/l.length,i=sum(l,function(x){return x.thdi})/l.length;return '<tr><td><b>'+q[1]+'</b></td><td>'+f(u,2)+'</td><td>'+f(i,2)+'</td><td><span class="dot '+(u<8?"ok":"lost")+'"></span>'+(u<8?"OK":"Hors limite")+'</td></tr>'}).join("")+'</tbody></table></div><p class="small mute">Valeurs simulées. Les limites et rangs retenus seront ceux validés avec la DEPA.</p>'}],
+ipe:["IPE et SER","Performance énergétique et référence",function(){
+ return '<div class="card scroll"><h2>Consommation observée et SER d’exemple, 24 h</h2><table><thead><tr><th>Poste</th><th>Observé (kWh)</th><th>SER (kWh)</th><th>Écart</th><th>cos φ moyen</th><th></th></tr></thead><tbody>'+PS.map(function(q){var l=ofP(q[0]),o=sum(l,kwh),r=sum(l,function(x){return kwh(x)*x.ser})/1,e=(o-r)/r*100,pf=sum(l,function(x){return x.pf})/l.length;return '<tr><td><b>'+q[1]+'</b></td><td>'+f(o)+'</td><td>'+f(r)+'</td><td style="color:var(--'+(e>5?"bad":"ok")+')"><b>'+(e>0?"+":"")+f(e,1)+' %</b></td><td>'+f(pf,2)+'</td><td><div class="bar"><i style="width:'+Math.min(100,o/Math.max(o,r)*100)+'%"></i></div></td></tr>'}).join("")+'</tbody></table></div><div class="card"><h2>Fiche d’un IPE (modèle)</h2><ul class="c small"><li>Nom, description et formule documentée</li><li>Grandeurs sources, unités, périmètre et points de comptage</li><li>Période d’agrégation et traitement des données manquantes</li><li>Date d’entrée en vigueur et historique des changements</li></ul><p class="small mute">Les formules officielles des IPE et la méthode de calcul de la SER (période, variables, normalisation) sont à valider avec le responsable énergie de la DEPA, selon l’ISO 50001:2018.</p></div>'}],
+alr:["Alertes","Détection, prise en charge et clôture",function(){
+ var NX={"Nouvelle":"Prendre en charge","Prise en charge":"Clôturer"};
+ return (can()?"":'<p class="small mute">Rôle Lecteur : consultation seule.</p>')+AL.map(function(a,i){return '<div class="card"><div class="row" style="margin:0"><h2 style="margin:0;margin-right:auto">'+a.t+' · '+a.e+'</h2><span class="tag">Priorité '+a.pr.toLowerCase()+'</span><span class="tag">'+a.st+'</span></div><div class="small mute">'+a.v+' · '+a.r+'</div><ul class="c small">'+a.h.map(function(x){return '<li>'+x+'</li>'}).join("")+'</ul>'+(NX[a.st]?'<div class="row" style="margin:8px 0 0"><input type="text" id="c'+i+'" placeholder="Commentaire" aria-label="Commentaire"'+(can()?"":" disabled")+'><button class="btn" data-a="'+i+'"'+(can()?"":" disabled")+'>'+NX[a.st]+'</button></div>':'')+'</div>'}).join("")}],
+rep:["Reporting","Rapports pour la revue et la planification énergétiques",function(){
+ var T={conso:"Synthèse des consommations",ipe:"Suivi des IPE et écart à la SER",com:"Complétude et qualité des données",ale:"Synthèse des alertes"};
+ return '<div class="row"><label class="small">Rapport <select data-s="rep">'+Object.keys(T).map(function(k){return '<option value="'+k+'"'+(k===S.rep?" selected":"")+'>'+T[k]+'</option>'}).join("")+'</select></label><button class="btn" id="csv">Télécharger en CSV</button></div><div class="card scroll"><h2>'+T[S.rep]+' – 24 dernières heures</h2><table><thead><tr>'+rep().h.map(function(x){return '<th>'+x+'</th>'}).join("")+'</tr></thead><tbody>'+rep().r.map(function(r){return '<tr>'+r.map(function(x){return '<td>'+x+'</td>'}).join("")+'</tr>'}).join("")+'</tbody></table></div><p class="small mute">Périmètre : 6 postes, '+PTS.length+' points. Les modèles, périodicités et formats définitifs sont à valider avec la DEPA. Le téléchargement CSV fonctionne sur le site déployé.</p>'}],
+arc:["Architecture et cybersécurité","Proposition à valider dans l’offre technique",function(){
+ var L=[["Terrain","Compteurs communicants et équipements existants"],["Communication","Réseau industriel et Modbus TCP/IP"],["Acquisition","Lecture, validation, horodatage, gestion des erreurs et reprise"],["Données","Mesures brutes, agrégats, configuration et journaux"],["Métier énergétique","Consommations, IPE, SER et règles d’alerte"],["Présentation","Application web, tableaux de bord, rapports, administration"],["Exploitation","Sauvegarde, supervision, gestion des accès, documentation"]];
+ return '<div class="card"><h2>Couches logiques</h2>'+L.map(function(x){return '<div class="layer"><b>'+x[0]+'</b> · <span class="mute">'+x[1]+'</span></div>'}).join("")+'</div><div class="card"><h2>Mesures de sécurité prévues</h2><ul class="c"><li>Authentification et gestion des rôles, moindre privilège</li><li>Chiffrement des accès web (HTTPS)</li><li>Journalisation des connexions et des actions sensibles</li><li>Segmentation du réseau de mesure et du réseau utilisateur</li><li>Sauvegardes et restauration testées</li><li>Synchronisation horaire des serveurs et équipements</li></ul><p class="small mute">Modbus TCP/IP n’offre ni authentification ni chiffrement : le cloisonnement réseau doit être défini dans l’architecture de déploiement.</p></div>'}],
+adm:["Administration et audit","Utilisateurs et journal des actions",function(){
+ if(S.role!=="Administrateur")return '<div class="card"><h2>Accès refusé</h2><p>Cette page est réservée au rôle Administrateur.</p></div>';
+ return '<div class="card scroll"><h2>Utilisateurs</h2><table><thead><tr><th>Identifiant</th><th>Rôle</th></tr></thead><tbody>'+S.users.map(function(u){return '<tr><td>'+u[0]+'</td><td>'+u[1]+'</td></tr>'}).join("")+'</tbody></table><div class="row" style="margin:10px 0 0"><input type="text" id="nu" placeholder="Nouvel identifiant" aria-label="Nouvel identifiant"><select id="nr"><option>Opérateur</option><option>Lecteur</option><option>Administrateur</option></select><button class="btn" id="au">Ajouter</button></div></div><div class="card"><h2>Journal d’audit (cette session)</h2>'+(S.audit.length?'<ul class="c small">'+S.audit.slice(0,30).map(function(a){return '<li>'+a.t+' · '+a.u+' · '+a.a+'</li>'}).join("")+'</ul>':'<p class="mute small">Aucune action pour l’instant. Changez de rôle ou traitez une alerte pour alimenter le journal.</p>')+'</div>'}],
+cps:["Conformité CPS","Objectifs du marché 12/DEPA/2026",function(){
+ var O=[["Mise à niveau du comptage des six postes","À réaliser sur site"],["Remontée automatique en Modbus TCP/IP","Simulée ici, acquisition à développer"],["Plateforme de management de l’énergie","Interface illustrée"],["Suivi des consommations","Illustré"],["Calcul des IPE et de la SER","Illustré, formules à valider"],["Alertes","Illustré, seuils à valider"],["Intégration des points existants sans doublon","À valider à l’inventaire"],["Reporting pour la revue énergétique","Illustré, modèles à valider"],["Formation des exploitants","À planifier"]];
+ return '<div class="card scroll"><table><thead><tr><th>Objectif</th><th>Statut dans cette démo</th></tr></thead><tbody>'+O.map(function(o){return '<tr><td>'+o[0]+'</td><td>'+o[1]+'</td></tr>'}).join("")+'</tbody></table></div><p class="small mute">Les articles techniques 45 à 51, le bordereau des prix et les conditions administratives doivent être relus sur le CPS original.</p>'}],
+ao:["Dossier AO","Livrables et points à confirmer",function(){
+ var A=["Dossier d’architecture et schéma de communication","Inventaire des postes, compteurs et points","Adresses IP et paramètres Modbus","Matrice des registres, unités et facteurs d’échelle","Paramétrage documenté des IPE et de la SER","Catalogue des alertes","Procès-verbaux d’essais et de mise en service","Guides utilisateur et administrateur","Procédures de sauvegarde et restauration","Supports et compte rendu de formation"];
+ var B=["Noms exacts des postes et quantités de compteurs","Marques, modèles et cartographies Modbus","Formules officielles des IPE et méthode de SER","Seuils, priorités et canaux de notification","Rétention, disponibilité et exigences de sauvegarde","Planning, garantie et programme de formation"];
+ function l(t,a,p){return '<div class="card"><h2>'+t+'</h2>'+a.map(function(x,i){var k=p+i;return '<label style="display:block;margin:5px 0"><input type="checkbox" data-k="'+k+'"'+(S.chk[k]?" checked":"")+'> '+x+'</label>'}).join("")+'</div>'}
+ return l("Livrables",A,"a")+l("À confirmer avant engagement",B,"b")}]
+};
+function rep(){var h,r;
+ if(S.rep==="conso"){h=["Poste","Points","Énergie (kWh)","Pointe (kW)"];r=PS.map(function(q){var l=ofP(q[0]);return [q[1],l.length,f(sum(l,kwh)),f(Math.max.apply(null,l.map(function(x){return cur(x)||0})))]})}
+ else if(S.rep==="ipe"){h=["Poste","Observé (kWh)","SER (kWh)","Écart (%)"];r=PS.map(function(q){var l=ofP(q[0]),o=sum(l,kwh),s=sum(l,function(x){return kwh(x)*x.ser});return [q[1],f(o),f(s),f((o-s)/s*100,1)]})}
+ else if(S.rep==="com"){h=["Poste","Points à jour","En retard","Perdus","Complétude (%)"];r=PS.map(function(q){var l=ofP(q[0]),a=l.filter(function(x){return x.age<15}).length,b=l.filter(function(x){return x.age>=15&&x.age<60}).length,c=l.length-a-b,tot=sum(l,function(x){return x.s.filter(function(v){return v!=null}).length});return [q[1],a,b,c,f(tot/(l.length*N)*100,1)]})}
+ else{h=["Équipement","Type","Priorité","État"];r=AL.map(function(a){return [a.e,a.t,a.pr,a.st]})}
+ return {h:h,r:r}}
+
+function render(){
+ var d=V[S.v];$("ttl").textContent=d[0];$("sub").textContent=d[1];
+ var G=[["Supervision",[["dash","Tableau de bord"],["syn","Synoptique et analyses"],["pos","Postes et compteurs"],["mes","Mesures et courbes"],["qual","Qualité d’énergie"],["ipe","IPE et SER"],["alr","Alertes"],["rep","Reporting"]]],["Solution et marché",[["arc","Architecture et cybersécurité"],["adm","Administration et audit"],["cps","Conformité CPS"],["ao","Dossier AO"]]]];
+ $("side").innerHTML='<div class="brand">SME Marsa Maroc<small>DEPA · Port d’Agadir</small></div>'+G.map(function(g){return '<h4>'+g[0]+'</h4>'+g[1].map(function(i){return '<button data-v="'+i[0]+'"'+(i[0]===S.v?' aria-current="page"':'')+'>'+i[1]+'</button>'}).join("")}).join("");
+ $("pg").innerHTML=d[2]();
+ [].forEach.call(document.querySelectorAll("[data-v]"),function(b){b.onclick=function(){S.v=b.dataset.v;location.hash=S.v;render();window.scrollTo(0,0)}});
+ [].forEach.call(document.querySelectorAll("[data-s]"),function(s){s.onchange=function(){S[s.dataset.s]=s.value;render()}});
+ [].forEach.call(document.querySelectorAll("[data-a]"),function(b){b.onclick=function(){var i=+b.dataset.a,a=AL[i],c=($("c"+i).value||"").trim();
+  if(a.st==="Nouvelle"){a.st="Prise en charge";a.h.push("Prise en charge"+(c?" : "+c:""))}else{a.st="Clôturée";a.h.push("Clôturée"+(c?" : "+c:""))}
+  log(a.st+" : "+a.t+" "+a.e);render()}});
+ [].forEach.call(document.querySelectorAll("[data-k]"),function(c){c.onchange=function(){S.chk[c.dataset.k]=c.checked}});
+ var c=$("csv");if(c)c.onclick=function(){var x=rep(),t=[x.h].concat(x.r).map(function(r){return r.join(";")}).join("\n"),a=document.createElement("a");a.href=URL.createObjectURL(new Blob(["\ufeff"+t],{type:"text/csv"}));a.download="rapport-"+S.rep+".csv";a.click();log("Export CSV "+S.rep)};
+ var au=$("au");if(au)au.onclick=function(){var n=($("nu").value||"").trim();if(!/^[a-z0-9._-]{3,32}$/.test(n)){$("nu").setCustomValidity("3 à 32 caractères : minuscules, chiffres . _ -");$("nu").reportValidity();return}S.users.push([n,$("nr").value]);log("Utilisateur créé : "+n);render()};
+}
+$("role").onchange=function(){S.role=this.value;log("Changement de rôle");render()};
+$("th").onclick=function(){var r=document.documentElement,d=r.getAttribute("data-theme")==="dark"||(!r.getAttribute("data-theme")&&matchMedia("(prefers-color-scheme:dark)").matches);r.setAttribute("data-theme",d?"light":"dark")};
+function clock(){$("clk").textContent=new Date().toLocaleString("fr-FR")}clock();setInterval(clock,1000);
+function route(){var h=location.hash.slice(1);if(V[h]){S.v=h}render()}
+window.addEventListener("hashchange",route);route();
+})();
+</script>
+</body>
+</html>

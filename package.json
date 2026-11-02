@@ -1,0 +1,6 @@
+{
+  "name": "sme-agadir",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Démo du Système de Monitoring Énergétique (SME) – Port d'Agadir (données simulées)"
+}
